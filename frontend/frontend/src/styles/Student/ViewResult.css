@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+}
+
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.result-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  width: 600px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.result-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.student-info p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.result-table th {
+  background-color: #2a5298;
+  color: white;
+  padding: 12px;
+}
+
+.result-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.result-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.summary {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.summary p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
