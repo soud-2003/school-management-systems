@@ -1,0 +1,60 @@
+.register-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+}
+
+.register-card {
+  background: white;
+  padding: 30px;
+  width: 300px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.register-card h2 {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.register-card input,
+.register-card select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.register-card button {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.register-card button:hover {
+  background: #1e40af;
+}
+
+.register-card .error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.register-card .login-link {
+  margin-top: 15px;
+}
