@@ -174,6 +174,26 @@ def get_student_results(request, student_id):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
+def get_results_by_user(request, user_id):
+    """
+    Get results directly by user ID - works even without Student record
+    """
+    try:
+        # Try to get student by user ID
+        try:
+            student = Student.objects.get(user_id=user_id)
+            results = Result.objects.filter(student=student).select_related('subject', 'teacher')
+            serializer = ResultSerializer(results, many=True)
+            return Response(serializer.data)
+        except Student.DoesNotExist:
+            # If no student record, return empty results
+            return Response([])
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
 def get_student_by_user(request, user_id):
     """
     Get student profile by user ID

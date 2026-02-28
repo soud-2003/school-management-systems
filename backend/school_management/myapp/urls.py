@@ -21,6 +21,7 @@ urlpatterns = [
     # Student endpoints
     path('users/<int:user_id>/student/', get_student_by_user),
     path('students/<int:student_id>/results/', get_student_results),
+    path('users/<int:user_id>/results/', get_results_by_user),
     
     # Teacher endpoints
     path('teachers/<int:teacher_id>/subjects/', get_teacher_subjects),
