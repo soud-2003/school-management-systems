@@ -7,9 +7,9 @@ import StudentHome from "./pages/Student/StudentHome";
 import TeacherHome from "./pages/Teacher/TeacherHome";
 import ManagementHome from "./pages/Management/ManagementHome";
 import ParrentHome from "./pages/Parrent/ParrentHome";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import Register from "./pages/Register";
-import About from "./pages/about";
+import About from "./pages/About";
 
 function App() {
   return (
