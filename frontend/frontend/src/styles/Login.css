@@ -40,6 +40,20 @@ body {
   background: #1e40af;
 }
 
+/* Demo account button looks lighter */
+.login-card .demo-btn {
+  width: 100%;
+  padding: 10px;
+  background: #6b7280;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-card .demo-btn:hover {
+  background: #4b5563;
+}
+
 .error {
   color: red;
   font-size: 14px;

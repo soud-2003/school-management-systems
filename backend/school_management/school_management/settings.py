@@ -16,6 +16,15 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Auto-run migrations on startup (for deployment)
+if not os.environ.get('SKIP_MIGRATIONS'):
+    try:
+        from django.core.management import call_command
+        call_command('migrate', '--run-syncdb', verbosity=0)
+    except Exception:
+        pass
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
