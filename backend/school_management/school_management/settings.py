@@ -91,26 +91,20 @@ WSGI_APPLICATION = 'school_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# Use Neon PostgreSQL database from environment variable or fallback to SQLite
-import dj_database_url
+# Use Neon PostgreSQL database
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL') or 'sqlite:///db.sqlite3')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_F3MOISDn5Cym',
+        'HOST': 'ep-wispy-river-aihrw776-pooler.c-4.us-east-1.aws.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        }
+    }
 }
-
-# Alternative: Direct Neon PostgreSQL configuration
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'neondb',
-#         'USER': 'neondb_owner',
-#         'PASSWORD': 'npg_F3MOISDn5Cym',
-#         'HOST': 'ep-wispy-river-aihrw776-pooler.c-4.us-east-1.aws.neon.tech',
-#         'PORT': '5432',
-#         'OPTIONS': {
-#             'sslmode': 'require',
-#         }
-#     }
-# }
 
 # Django REST Framework settings
 REST_FRAMEWORK = {
