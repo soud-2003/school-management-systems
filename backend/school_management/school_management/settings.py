@@ -65,6 +65,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://*.vercel.app",
     "https://*.vercel.com",
     "https://school-management-systems-inky.vercel.app",
+    "https://school-management-systems-one.vercel.app",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
