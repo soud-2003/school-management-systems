@@ -31,7 +31,7 @@ function StudentHome() {
     if (user.id) {
       fetchStudentProfile(user.id);
     }
-  }, [user.id]);
+  }, [user]);
 
   const handleLogout = () => {
     localStorage.removeItem("user");

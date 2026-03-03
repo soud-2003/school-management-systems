@@ -17,12 +17,14 @@ function MyResult() {
   const fetchResults = async () => {
     try {
       setLoading(true);
+      setError("");
       // Use the new endpoint that gets results directly by user ID
       // This works even without a Student record
       const resultsResponse = await api.get(`/users/${user.id}/results/`);
       setResults(resultsResponse.data);
     } catch (err) {
       console.error("Error fetching results:", err);
+      setError(err.message || "Failed to fetch results");
       // If no results found, show empty state instead of error
       setResults([]);
     } finally {
