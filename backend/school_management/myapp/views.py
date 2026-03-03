@@ -150,6 +150,21 @@ def register_view(request):
     user.role = role
     user.save()
     
+    # Automatically create Student record if role is student
+    if role == 'student':
+        # Get or create a default class (Class 1 as default)
+        default_class, _ = Class.objects.get_or_create(
+            class_name='Class 1',
+            defaults={'class_name': 'Class 1'}
+        )
+        
+        # Create Student record
+        Student.objects.create(
+            user=user,
+            student_class=default_class,
+            parent=None
+        )
+    
     serializer = UserSerializer(user)
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -267,7 +282,7 @@ def get_dashboard_stats(request):
     Get dashboard statistics for management
     """
     total_students = Student.objects.count()
-    total_teachers = User.objects.filter(role='Teacher').count()
+    total_teachers = User.objects.filter(role='teacher').count()
     total_classes = Class.objects.count()
     total_subjects = Subject.objects.count()
     
