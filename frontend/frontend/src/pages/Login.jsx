@@ -96,6 +96,16 @@ function Login() {
           <button type="submit" disabled={loading}>
             {loading ? "Logging in..." : "Login"}
           </button>
+
+          {/* demo credentials button */}
+          <button
+            type="button"
+            className="demo-btn"
+            onClick={() => setFormData({ username: "student1", password: "test123" })}
+            style={{ marginTop: "10px" }}
+          >
+            Use Demo Account
+          </button>
         </form>
 
         <p className="login-link">
