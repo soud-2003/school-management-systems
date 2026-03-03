@@ -1,8 +1,9 @@
 import axios from "axios";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "./constants";
 
+// ALWAYS use the deployed Render backend - no local fallback
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://school-management-systems-deem.onrender.com/api",
+  baseURL: "https://school-management-systems-deem.onrender.com/api",
 });
 
 api.interceptors.request.use(
